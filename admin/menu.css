@@ -1,0 +1,305 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.navbar {
+    background-color: green;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    transition: all 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+    color: #ffcc00; /* Change link color on hover */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+#categoryList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.category-item {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the content horizontally */
+    justify-content: center; /* Center the content vertically */
+    text-align: center;
+    margin: 10px; /* Add margin for spacing between categories */ 
+    height: 200px;  
+}
+
+#itemList {
+    margin-top: 20px;
+}
+
+/* CSS for items */
+.item {
+    display: flex; /* Use flexbox to align items horizontally */
+    align-items: flex-start; /* Align items at the top */
+    margin-bottom: 20px; /* Spacing between items */
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.item .item-image {
+    max-width: 30%; /* Set maximum width for item images */
+    height: 100%; /* Maintain aspect ratio */
+    margin-right: 20px; /* Add space between image and item details */
+}
+.item .item-image img{
+    max-width: 100%;
+    height: auto;
+}
+
+.item .item-text {
+    flex: 1; /* Allow item details to take remaining space */
+}
+
+.item h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.item p {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #666;
+}
+
+
+
+.form-popup {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    text-align: center;
+    z-index: 1000;
+}
+
+.form-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.form-container input[type="text"],
+.form-container input[type="file"],
+.form-container select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-container button {
+    width: 100%;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    padding: 15px;
+    margin-top: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+
+/* ... Previous CSS Code ... */
+
+/* Styles for buttons */
+button, input[type="submit"] {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover, input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+/* Styles for forms */
+.form-container {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.form-container input[type="text"],
+.form-container input[type="file"],
+.form-container select {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.form-container button,
+.form-container input[type="submit"] {
+    width: 100%;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 15px;
+    margin-top: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+}
+
+.form-container button:hover,
+.form-container input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+
+/* Styles for the overlay */
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+/* Styles for the pop-up form */
+.popup-form {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+}
+
+/* CSS for category images */
+.category-item img {
+    max-width: 80%; /* Ensures the image doesn't exceed its parent's width */
+    max-height: 80%; /* Ensure images don't exceed the height of their container */
+    height: auto; /* Maintains the aspect ratio of the image */
+    display: block; /* Ensures there is no extra space beneath the image */
+    margin-bottom: 10px; /* Adds space between the image and other elements */
+    border: 2px solid #ccc; /* Adds a border around the image */
+    border-radius: 8px; /* Rounds the corners of the image */
+    /*object-fit: cover;*/
+}
+
+/* CSS for the "No image" text */
+.category-item p {
+    margin: 10px 0; /* Adds space around the text */
+    font-style: italic; /* Makes the text italic */
+    color: #888; /* Sets the text color to a muted gray */
+}
+
+.delete-button {
+    background-color: #ff4444;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.delete-button:hover {
+    background-color: #cc0000;
+}
+
+/* Edit Button Styles */
+.edit-button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+/* Delete Button Styles (for reference) */
+.delete-button {
+    background-color: #ff3333;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+
+/* ... Other CSS Rules ... */

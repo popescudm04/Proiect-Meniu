@@ -1,0 +1,110 @@
+/* Styles for Checkout Page */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+a {
+    display: block;
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Style for item details (name and price) */
+.item-details {
+    flex: 1;
+}
+
+/* Style for quantity and remove buttons */
+.item-controls {
+    display: flex;
+    align-items: center;
+}
+
+#cartItemsList {
+    list-style: none;
+    padding: 0;
+}
+
+
+#cartItemsList li:last-child {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+/* Style for quantity and remove buttons */
+.quantity-button,
+.remove-button {
+    background-color: #4caf50;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 5px; /* Add margin for spacing */
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add box shadow */
+    margin-left: 10px; /* Add margin between buttons */
+}
+
+/* Style for remove button */
+.remove-button {
+    background-color: #f44336; /* Red color for remove button */
+}
+/* Style for quantity display */
+.quantity {
+    font-weight: bold;
+    margin: 0 5px;
+}
