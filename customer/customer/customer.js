@@ -169,7 +169,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     alert("Item added succesfully to cart");
 
                     // Call functions from checkout.js to handle the logic
-                    addToCart(item.id, item.name, item.price, quantity);
+                    addToCart(tableId, item.id, item.name, item.price, quantity);
                 });
             });
         }
