@@ -27,6 +27,8 @@ a {
     margin-bottom: 20px;
     margin-top: 20px;
     margin-left: 20px;
+    justify-content: space-evenly;
+    flex-wrap: nowrap;
 }
 
 .cart-item {
