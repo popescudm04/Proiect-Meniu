@@ -1,5 +1,5 @@
 <?php
-include('../db.php'); // Include your database connection code
+include('../../db.php'); // Include your database connection code
 
 if ($_SERVER["REQUEST_METHOD"] == "DELETE" && isset($_GET['id'])) {
     // Get category ID from the request parameter

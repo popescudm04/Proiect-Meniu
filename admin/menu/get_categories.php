@@ -1,5 +1,5 @@
 <?php
-include('../db.php'); // Include the database connection file
+include('../../db.php'); // Include the database connection file
 
 // Fetch categories from the database
 $sql = "SELECT * FROM categories";

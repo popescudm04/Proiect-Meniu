@@ -1,5 +1,5 @@
 <?php
-include('../db.php'); // Include your database connection code
+include('../../db.php'); // Include your database connection code
 
 if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['category_id'])) {
     // Get the category ID from the query parameter

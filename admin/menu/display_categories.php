@@ -1,5 +1,5 @@
 <?php
-include('../db.php'); // Include your database connection code
+include('../../db.php'); // Include your database connection code
 
 // Fetch categories from the database
 $sql = "SELECT id, name, image FROM categories"; // Include the 'image' field in the SQL query

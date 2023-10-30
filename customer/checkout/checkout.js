@@ -32,7 +32,7 @@ function addToCart(itemId, itemName, itemPrice, quantity) {
 document.addEventListener('DOMContentLoaded', function () {
 
     console.log(window.location.pathname);
-    if (window.location.pathname === '/customer/checkout.html') {
+    if (window.location.pathname === '/customer/checkout/checkout.html') {
 
 
         const cartItemsList = document.getElementById('cartItemsList');

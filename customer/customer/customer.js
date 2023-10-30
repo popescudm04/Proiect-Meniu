@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (checkoutButton) {
         checkoutButton.addEventListener('click', () => {
-            window.location.href = 'checkout.html'; // Redirect to the checkout page
+            window.location.href = '../checkout/checkout.html'; // Redirect to the checkout page
         });
     }
 

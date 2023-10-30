@@ -1,5 +1,5 @@
 <?php
-include('../db.php'); // Include the database connection file
+include('../../db.php'); // Include the database connection file
 
 if (isset($_GET['categoryId'])) {
     // Sanitize the category ID

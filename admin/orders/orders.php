@@ -12,8 +12,8 @@
     <div class="navbar">
         <div class="logo">Restaurant Name</div>
         <div class="nav-links">
-            <a href="menu.php">Menu</a>
-            <a href="orders.php">Orders</a>
+            <a href="../menu/menu.php">Menu</a>
+            <a href="../menu/orders.php">Orders</a>
         </div>
     </div>
 
