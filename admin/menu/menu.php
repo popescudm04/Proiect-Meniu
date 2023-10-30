@@ -14,6 +14,7 @@
         <div class="nav-links">
             <a href="../menu/menu.php">Menu</a>
             <a href="../orders/orders.php">Orders</a> 
+            <a href="../tables/tables.php">Tables</a> 
             
         </div>
     </nav>
