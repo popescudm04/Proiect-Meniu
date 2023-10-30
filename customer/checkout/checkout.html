@@ -12,8 +12,18 @@
       <h1>Checkout</h1>
     </header>
 
+    <script>
+      const tableId = new URLSearchParams(window.location.search).get('table_id');
+      const menuLink = document.createElement('a');
+      menuLink.href = `../customer/customer.html?table_id=${tableId}`;
+      menuLink.textContent = 'Menu';
+      document.body.appendChild(menuLink);
+
+    </script>
+    
     <main>
-      <a href="../customer/customer.html">Menu</a>
+      
+      
       <section class="cart-items">
         <h2>Cart Items</h2>
         <ul id="cartItemsList">

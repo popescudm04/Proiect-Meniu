@@ -2,13 +2,26 @@ document.addEventListener('DOMContentLoaded', function () {
     const foodButtonsContainer = document.getElementById('foodButtonsContainer');
     const menuItemsContainer = document.querySelector('.menu-items');
 
+
+    // Function to extract table ID from URL
+    function getTableIdFromUrl() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const tableId = urlParams.get('table_id');
+        return tableId;
+    }
+
+    // Example usage
+    const tableId = getTableIdFromUrl();
+    console.log('Table ID from URL:', tableId);
+
+
     generateFoodTypeButtons();
 
     const checkoutButton = document.getElementById('checkoutButton');
 
     if (checkoutButton) {
         checkoutButton.addEventListener('click', () => {
-            window.location.href = '../checkout/checkout.html'; // Redirect to the checkout page
+            window.location.href = '../checkout/checkout.html?table_id='+tableId; // Redirect to the checkout page
         });
     }
 
@@ -149,7 +162,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 // Event listener for Add to Cart button
                 addToCartBtn.addEventListener('click', () => {
-                   // const itemId = menuItem.dataset.item.id;
+                    // const itemId = menuItem.dataset.item.id;
                     //const itemName = menuItem.dataset.item.name;
                     //const itemPrice = parseFloat(menuItem.dataset.item.price);
                     const quantity = parseInt(quantityElement.textContent);

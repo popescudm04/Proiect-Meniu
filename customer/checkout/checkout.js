@@ -1,5 +1,6 @@
 // checkout.js
 
+
 // Retrieve cart data from localStorage when the page loads
 const savedCart = localStorage.getItem('cart');
 let cart = savedCart ? JSON.parse(savedCart) : [];
@@ -34,6 +35,17 @@ document.addEventListener('DOMContentLoaded', function () {
     console.log(window.location.pathname);
     if (window.location.pathname === '/customer/checkout/checkout.html') {
 
+        // Function to extract table ID from URL
+        function getTableIdFromUrl() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const tableId = urlParams.get('table_id');
+            return tableId;
+        }
+
+        // Example usage
+        const tableId = getTableIdFromUrl();
+        console.log('Table ID from URL:', tableId);
+
 
         const cartItemsList = document.getElementById('cartItemsList');
         console.log(cart);
@@ -50,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function () {
             cartItems.forEach((item, index) => {
                 const cartItemDiv = document.createElement('div');
                 cartItemDiv.className = 'cart-item';
-            
+
                 const itemDetailsDiv = document.createElement('div');
                 itemDetailsDiv.className = 'item-details';
                 const itemName = document.createElement('p');
@@ -61,7 +73,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 itemPrice.textContent = `$${parseFloat(item.itemPrice).toFixed(2)}`;
                 itemDetailsDiv.appendChild(itemName);
                 itemDetailsDiv.appendChild(itemPrice);
-            
+
                 const quantityControlsDiv = document.createElement('div');
                 quantityControlsDiv.className = 'quantity-controls';
                 const minusButton = document.createElement('button');
@@ -96,18 +108,18 @@ document.addEventListener('DOMContentLoaded', function () {
                     localStorage.setItem('cart', JSON.stringify(cartItems));
                     displayCartItems();
                 });
-            
+
                 quantityControlsDiv.appendChild(minusButton);
                 quantityControlsDiv.appendChild(quantitySpan);
                 quantityControlsDiv.appendChild(plusButton);
                 quantityControlsDiv.appendChild(removeButton);
-            
+
                 cartItemDiv.appendChild(itemDetailsDiv);
                 cartItemDiv.appendChild(quantityControlsDiv);
-            
+
                 cartItemsList.appendChild(cartItemDiv);
             });
-            
+
 
             // Calculate total price and display it
             const totalPrice = cartItems.reduce((total, item) => total + item.itemPrice * item.quantity, 0);
