@@ -30,3 +30,38 @@ body {
     text-decoration: underline;
     color: #ffcc00; /* Change link color on hover */
 }
+
+/* Order Item */
+.order-item {
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Table ID */
+.table-id {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Items List */
+.items-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+/* Item in Items List */
+.items-list li {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+/* Total Price */
+.total-price {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 20px;
+}
