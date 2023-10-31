@@ -1,39 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Checkout</title>
-    <link rel="stylesheet" href="checkout.css" />
-    <!-- Include your CSS file for styling -->
-  </head>
-  <body>
+
+<head>
+
+  <title>Checkout</title>
+  <link rel="stylesheet" href="checkout.css" />
+  <!-- Include your CSS file for styling -->
+</head>
+
+<body>
+  <section>
     <header>
-      <h1>Checkout</h1>
+      <div class="header-image">
+        <img src="../../imagini restaurant/Restaurant.jpg" alt="Restaurant Image">
+      </div>
+      <div class="restaurant-details">
+        <h1>Restaurant Name</h1>
+        <p>Location: Restaurant Location</p>
+        <p>Phone: +1-123-456-7890</p>
+        <p>Wi-Fi Password: ********</p>
+        <p>Description: A brief description of the restaurant.</p>
+      </div>
+      <nav>
+        <button id="main-menu">Main Menu</button>
+        <button id="bar-menu">Bar</button>
+      </nav>
     </header>
 
-    <script>
-      const tableId = new URLSearchParams(window.location.search).get('table_id');
-      const menuLink = document.createElement('a');
-      menuLink.href = `../customer/customer.html?table_id=${tableId}`;
-      menuLink.textContent = 'Menu';
-      document.body.appendChild(menuLink);
-
-    </script>
-    
     <main>
-      
-      
-      <section class="cart-items">
+      <script>
+        const tableId = new URLSearchParams(window.location.search).get('table_id');
+        const menuLink = document.createElement('a');
+        menuLink.href = `../customer/customer.html?table_id=${tableId}`;
+        menuLink.textContent = 'Menu';
+        const main = document.querySelector('main');
+        main.appendChild(menuLink);
+      </script>
+      <div class="cart-items">
         <h2>Cart Items</h2>
         <ul id="cartItemsList">
           <!-- Cart items will be dynamically generated here -->
         </ul>
-      </section>
+      </div>
       <button type="submit">Place Order</button>
     </main>
+    
 
     <script src="checkout.js"></script>
     <!-- Include your JavaScript file for checkout functionality -->
-  </body>
+  </section>
+</body>
+
 </html>
