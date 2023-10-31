@@ -31,6 +31,32 @@ function addToCart(tableId, itemId, itemName, itemPrice, quantity) {
     console.log('Item added to cart for table ID:', tableId, cart);
 }
 
+// Function to place an order
+function placeOrder(tableId, items) {
+    const orderData = {
+        table_id: tableId,
+        items: items
+    };
+
+    // Send the order data to the server using fetch API
+    fetch(`place_order.php?table_id=${tableId}`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(orderData)
+    })
+        .then(response => response.json())
+        .then(data => {
+            // Handle the response from the server (if needed)
+            console.log('Order placed successfully:', data);
+            // Optionally, you can redirect the user to a confirmation page or perform other actions
+        })
+        .catch(error => {
+            console.error('Error placing order:', error);
+        });
+}
+
 document.addEventListener('DOMContentLoaded', function () {
 
     console.log(window.location.pathname);
@@ -109,7 +135,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 removeButton.addEventListener('click', () => {
                     // Find the index of the item with the matching tableId and itemId
                     const itemIndex = cart.findIndex(item => item.tableId === tableId && item.itemId === item.itemId);
-                
+
                     if (itemIndex !== -1) {
                         // Remove the item from the cart if found
                         cart.splice(itemIndex, 1);
@@ -117,7 +143,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         displayCartItems(tableId);
                     }
                 });
-                
+
 
                 // Append buttons to quantityControlsDiv
                 quantityControlsDiv.appendChild(minusButton);
@@ -142,6 +168,23 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Call the displayCartItems function when the page loads
         displayCartItems(tableId);
+
+        // Event listener for the "Place Order" button click
+        const placeOrderButton = document.getElementById('placeOrderButton');
+        placeOrderButton.addEventListener('click', () => {
+            // Retrieve cart items from localStorage
+            const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+
+            // Filter cart items based on the specified tableId
+            const filteredCartItems = cartItems.filter(item => item.tableId === tableId);
+
+            // Place the order
+            placeOrder(tableId, filteredCartItems);
+        });
+
+
+
+
     }
 });
 
