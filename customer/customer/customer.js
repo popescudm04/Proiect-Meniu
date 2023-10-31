@@ -1,7 +1,8 @@
 document.addEventListener('DOMContentLoaded', function () {
     const foodButtonsContainer = document.getElementById('foodButtonsContainer');
     const menuItemsContainer = document.querySelector('.menu-items');
-
+    const searchInput = document.getElementById('searchInput');
+    const searchResults = document.querySelector('.search-results');
 
     // Function to extract table ID from URL
     function getTableIdFromUrl() {
@@ -60,6 +61,38 @@ document.addEventListener('DOMContentLoaded', function () {
                 console.error('Error fetching menu items:', error);
             });
     }
+
+    function fetchSearchMenuItems(keyword) {
+        return fetch(`search_menu_items.php?keyword=${keyword}`)
+            .then(response => response.json())
+            .catch(error => {
+                console.error('Error fetching search results:', error);
+            });
+    }
+
+    searchInput.addEventListener('input', function () {
+        const searchText = searchInput.value.toLowerCase();
+        if (searchText) {
+            fetchSearchMenuItems(searchText)
+                .then(results => {
+                    if (Array.isArray(results) && results.length > 0) {
+                        displayMenuItems(results);
+                        menuItemsContainer.style.display = 'block';
+                        foodButtonsContainer.style.display = 'none';
+                    } else {
+                        clearMenuItems();
+                    }
+                })
+                .catch(error => {
+                    console.error('Error fetching search results:', error);
+                    clearMenuItems();
+                });
+        } else {
+            clearMenuItems();
+            foodButtonsContainer.style.display = 'flex';
+        }
+    });
+    
 
     function clearMenuItems() {
         const menuItemsContainer = document.querySelector('.menu-items');
