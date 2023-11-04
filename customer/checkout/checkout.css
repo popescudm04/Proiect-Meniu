@@ -1,4 +1,12 @@
-/* Styles for Checkout Page */
+@keyframes slide-up{
+    0%{
+        transform : translateY(100%);
+    }
+    100% {
+        transform : translateY(0%);
+    }
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -68,6 +76,7 @@ a {
 }
 
 .cart-items {
+    animation: slide-up 500ms forwards;
     background-color: #fff; /* Set the background color to white */
     padding: 20px; /* Add some padding for spacing */
     border-radius: 10px; /* Add rounded corners */
@@ -132,6 +141,7 @@ a {
 
 /* Style for the 'Place Order' button */
 button[type="submit"] {
+    animation: slide-up 750ms forwards;
     margin-top: 15px;
     background-color: #4CAF50;
     color: white;

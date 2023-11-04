@@ -1,4 +1,21 @@
-/* Reset some default styles for cleaner formatting */
+@keyframes fade-in{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+
+@keyframes slide-up{
+    0%{
+        transform : translateY(100%);
+    }
+    100% {
+        transform : translateY(0%);
+    }
+}
 * {
     margin: 0;
     padding: 0;
@@ -14,13 +31,12 @@ body {
     
 }
 
-/* Header styles */
 header {
-    width: 100%; /* Make the header fill the width of the screen */
+    animation: fade-in 500ms forwards;
+    width: 100%; 
     height: 350px;
     background-color: #fff;
-    text-align: center;
-    
+    text-align: center;    
 }
 
 .header-image {
@@ -37,13 +53,13 @@ header {
 
 .restaurant-details {
     margin-top: -16px;
-    border-radius: 20px 20px 0 0; /* Add border radius to the top sides */
-    background-color: #fff; /* Ensure the background covers the curved area */
+    border-radius: 20px 20px 0 0; 
+    background-color: #fff; 
     position: relative;
 }
 
 
-/* Navigation styles */
+
 nav {
     margin-top: 20px;
 }
@@ -58,14 +74,16 @@ nav {
     cursor: pointer;
 }
 
-/* Main styles */
+
 main {
+    animation: fade-in 500ms forwards;
     padding: 10px;
     background-color: #fff;
 }
 
-/* Search bar styles */
+
 .search-bar {
+    animation : slide-up 500ms forwards;
     margin-top: 20px;
     display: flex;
     justify-content: space-between,center;
@@ -81,34 +99,35 @@ main {
     margin-bottom: 15px;
 }
 
-/* Food buttons styles */
+
 .food-buttons {
     
-    display: flex; /* Change from grid to flex */
-    flex-direction: column; /* Ensure buttons are in a single column */
-    align-items: center; /* Center-align the buttons horizontally */
-    gap: 10px; /* Adjust the space between buttons as needed */
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    gap: 10px; 
 }
 
 .food-type {
+    animation: slide-up 500ms forwards;
     background-color: #fff;
-    border: none; /* Remove the border for a cleaner look */
-    border-radius: 10px; /* Add rounded corners to the button */
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3); /* Add a slightly stronger shadow effect */
+    border: none; 
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3); 
     text-align: center;
-    width: 87.45%; /* Set the width to 70% */
-    height: 250px; /* Set a fixed height of 200px */
+    width: 87.45%; 
+    height: 250px; 
     position: relative;
-    margin: 5px; /* Adjust the margin as needed for spacing */
-    cursor: pointer; /* Add this line to make the button clickable */
+    margin: 5px; 
+    cursor: pointer; 
     z-index: 1;
 }
 
 .food-type img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Make the image fill the button */
-    border-radius: 10px; /* Add rounded corners to the image */
+    object-fit: cover; 
+    border-radius: 10px;
     z-index: 0;
     pointer-events: none;
 }
@@ -119,20 +138,21 @@ main {
     left: 50%;
     transform: translate(-50%, -50%);
     margin: 0;
-    font-size: 30px; /* Adjust the font size as needed */
-    font-family: 'Times New Roman', serif; /* Replace 'Your Font Name' with your desired font */
+    font-size: 30px; 
+    font-family: 'Times New Roman', serif; 
     color: white;
 }
 
-/* Mobile-friendly adjustments */
 
-/* Style for the menu items container */
+
+
 .menu-items {
-    display: none; /* Initially hide the menu items */
+    display: none;
     padding: 20px;
 }
 
 .menu-item {
+    animation: slide-up 500ms forwards;
     border: 1px solid #ddd;
     margin-bottom: 10px;
     background-color: #fff;
