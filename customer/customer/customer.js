@@ -107,7 +107,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const returnButton = document.createElement('button');
         const returnIcon = document.createElement('i');
-        returnIcon.className = "fa fa-arrow-left";
+        returnIcon.className = 'material-symbols-outlined';
+        returnIcon.textContent = 'arrow_back';
         returnButton.className = 'return-button';
         returnButton.textContent = '';
         returnButton.appendChild(returnIcon);
