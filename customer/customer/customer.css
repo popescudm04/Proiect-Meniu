@@ -52,28 +52,14 @@ header {
 }
 
 .restaurant-details {
+    height: 200px;
     margin-top: -16px;
     border-radius: 20px 20px 0 0; 
     background-color: #fff; 
     position: relative;
+    display: grid;
+    justify-content: center;
 }
-
-
-
-nav {
-    margin-top: 20px;
-}
-
-#main-menu, #bar-menu {
-    width: 48%;
-    padding: 10px;
-    font-size: 20px;
-    background-color: #4CAF50;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-}
-
 
 main {
     animation: fade-in 500ms forwards;
@@ -199,8 +185,7 @@ main {
 
 
 .return-button {
-    background-color: #4CAF50;
-    color: #fff;
+    background-color: #33CCCC;
     padding: 10px 20px;
     font-size: 16px;
     border: none;
@@ -226,7 +211,7 @@ section{
     bottom: 0;
     right: 20px;
     z-index: 999;
-    background-color: #4CAF50;
+    background-color: #33CCCC;
     padding: 15px 32px;
     border-radius: 5px;
 }
@@ -242,7 +227,7 @@ section{
 
 /* Styles for Add to Cart Button */
 .add-to-cart-btn {
-    background-color: #4CAF50; /* Green background color */
+    background-color: #33CCCC; /* Green background color */
     color: white; /* White text color */
     padding: 10px 20px; /* Padding around the button text */
     border: none; /* No border */
@@ -251,9 +236,6 @@ section{
     transition: background-color 0.3s ease; /* Smooth background color transition */
 }
 
-.add-to-cart-btn:hover {
-    background-color: #45a049; /* Darker green on hover */
-}
 
 /* Styles for Quantity Controls */
 .quantity-controls {
@@ -262,18 +244,13 @@ section{
 }
 
 .quantity-controls button {
-    background-color: #008CBA; /* Blue background color for buttons */
-    color: white; /* White text color */
+    background-color:white; /* Blue background color for buttons */
     padding: 8px 16px; /* Padding around the buttons */
     border: none; /* No border */
     cursor: pointer; /* Cursor on hover */
     font-size: 14px; /* Font size */
     margin: 0 5px; /* Margin between buttons */
     transition: background-color 0.3s ease; /* Smooth background color transition */
-}
-
-.quantity-controls button:hover {
-    background-color: #005f6b; /* Darker blue on hover */
 }
 
 /* Styles for Quantity Display */

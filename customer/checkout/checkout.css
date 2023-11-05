@@ -48,18 +48,10 @@ header {
     position: relative;
 }
 
-nav {
-    margin-top: 20px;
-}
-
-#main-menu, #bar-menu {
-    width: 48%;
-    padding: 10px;
-    font-size: 20px;
-    background-color: #4CAF50;
-    color: #fff;
-    border: none;
-    cursor: pointer;
+.menuBackBtn{
+    background-color: white;
+    border: 0;
+    
 }
 
 main {
@@ -110,6 +102,10 @@ a {
 .item-details {
     flex: 1;
 }
+.quantity-controls{
+    display: flex;
+    justify-content: center;
+}
 
 /* Style for quantity and remove buttons */
 .item-controls {
@@ -117,27 +113,7 @@ a {
     align-items: center;
 }
 
-/* Style for quantity and remove buttons (buttons within each cart item) */
-.quantity-button,
-.remove-button {
-    background-color: #4caf50;
-    border: none;
-    color: white;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 5px;
-    cursor: pointer;
-    border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
 
-/* Style for remove button */
-.remove-button {
-    background-color: #f44336; /* Red color for remove button */
-}
 
 /* Style for the 'Place Order' button */
 button[type="submit"] {
@@ -160,9 +136,8 @@ button[type="submit"]:hover {
 /* Style for quantity and remove buttons */
 .quantity-button,
 .remove-button {
-    background-color: #4caf50;
+    background-color: white;
     border: none;
-    color: white;
     padding: 10px 20px;
     text-align: center;
     text-decoration: none;
@@ -171,8 +146,7 @@ button[type="submit"]:hover {
     margin: 5px; /* Add margin for spacing */
     cursor: pointer;
     border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add box shadow */
-    margin-left: 10px; /* Add margin between buttons */
+   
 }
 
 /* Style for remove button */
@@ -188,4 +162,10 @@ button[type="submit"]:hover {
 section{
     width:480px;
     height:100%
+}
+
+.item-quantity{
+    font-size: larger;
+    display: flex;
+    margin-top:18px;
 }

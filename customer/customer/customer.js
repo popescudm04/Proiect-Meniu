@@ -106,8 +106,12 @@ document.addEventListener('DOMContentLoaded', function () {
         menuItemsContainer.style.display = 'block';
 
         const returnButton = document.createElement('button');
-        returnButton.textContent = 'Return to categories';
+        const returnIcon = document.createElement('i');
+        returnIcon.className = "fa fa-arrow-left";
         returnButton.className = 'return-button';
+        returnButton.textContent = '';
+        returnButton.appendChild(returnIcon);
+    
 
         returnButton.addEventListener('click', () => {
             menuItemsContainer.style.display = 'none';
@@ -148,16 +152,25 @@ document.addEventListener('DOMContentLoaded', function () {
                 quantityControls.className = 'quantity-controls';
 
                 const minusBtn = document.createElement('button');
-                minusBtn.textContent = '-';
+                const minusIcon = document.createElement('span');
+                minusBtn.textContent = '';
                 minusBtn.className = 'quantity-btn minus-btn';
+                minusIcon.className = 'material-symbols-outlined';
+                minusIcon.textContent = 'remove'
+                minusBtn.appendChild(minusIcon);
+
 
                 const quantityElement = document.createElement('span');
                 quantityElement.textContent = '1';
                 quantityElement.className = 'quantity';
 
                 const plusBtn = document.createElement('button');
-                plusBtn.textContent = '+';
+                const plusIcon = document.createElement('span');
+                plusBtn.textContent = '';
                 plusBtn.className = 'quantity-btn plus-btn';
+                plusIcon.className = 'material-symbols-outlined';
+                plusIcon.textContent = 'add';
+                plusBtn.appendChild(plusIcon);
 
                 quantityControls.appendChild(minusBtn);
                 quantityControls.appendChild(quantityElement);

@@ -5,6 +5,7 @@
 
   <title>Checkout</title>
   <link rel="stylesheet" href="checkout.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
   <!-- Include your CSS file for styling -->
 </head>
 
@@ -21,20 +22,25 @@
         <p>Wi-Fi Password: ********</p>
         <p>Description: A brief description of the restaurant.</p>
       </div>
-      <nav>
-        <button id="main-menu">Main Menu</button>
-        <button id="bar-menu">Bar</button>
-      </nav>
     </header>
 
     <main>
       <script>
         const tableId = new URLSearchParams(window.location.search).get('table_id');
-        const menuLink = document.createElement('a');
-        menuLink.href = `../customer/customer.html?table_id=${tableId}`;
-        menuLink.textContent = 'Menu';
+        const menuBackBtn = document.createElement('button');
+        menuBackBtn.className = 'menuBackBtn';
+        menuBackBtn.textContent='';
         const main = document.querySelector('main');
-        main.appendChild(menuLink);
+        main.appendChild(menuBackBtn);
+
+        const menuLink = document.createElement('span');
+        menuBackBtn.addEventListener('click', function () {
+        // Use window.location.href to navigate to the new page
+        window.location.href = `../customer/customer.html?table_id=${tableId}`;
+    });
+        menuLink.textContent = 'arrow_back';
+        menuLink.className = 'material-symbols-outlined';
+        menuBackBtn.appendChild(menuLink);
       </script>
       <div class="cart-items">
         <h2>Cart Items</h2>

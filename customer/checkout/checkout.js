@@ -107,8 +107,14 @@ document.addEventListener('DOMContentLoaded', function () {
                 const quantityControlsDiv = document.createElement('div');
                 quantityControlsDiv.className = 'quantity-controls';
                 const minusButton = document.createElement('button');
-                minusButton.textContent = '-';
+                const minusIcon = document.createElement('span');
+                minusIcon.className ='material-symbols-outlined';
+                minusIcon.textContent = 'remove';
+                minusButton.textContent = '';
                 minusButton.className = 'quantity-button';
+
+                minusButton.appendChild(minusIcon);
+
                 minusButton.addEventListener('click', () => {
                     // Decrease the quantity of the item and update the display
                     if (item.quantity > 1) {
@@ -117,12 +123,18 @@ document.addEventListener('DOMContentLoaded', function () {
                         displayCartItems(tableId);
                     }
                 });
-                const quantitySpan = document.createElement('span');
+                const quantitySpan = document.createElement('div');
                 quantitySpan.className = 'item-quantity';
                 quantitySpan.textContent = item.quantity;
+                
                 const plusButton = document.createElement('button');
-                plusButton.textContent = '+';
+                const plusIcon = document.createElement('span');
+                plusButton.textContent = '';
                 plusButton.className = 'quantity-button';
+                plusIcon.className = 'material-symbols-outlined'
+                plusIcon.textContent ='add';
+                plusButton.appendChild(plusIcon);
+
                 plusButton.addEventListener('click', () => {
                     // Increase the quantity of the item and update the display
                     item.quantity++;
@@ -130,8 +142,12 @@ document.addEventListener('DOMContentLoaded', function () {
                     displayCartItems(tableId);
                 });
                 const removeButton = document.createElement('button');
-                removeButton.textContent = 'Remove';
+                const removeIcon = document.createElement('span');
+                removeIcon.className = 'material-symbols-outlined';
+                removeIcon.textContent = 'delete';
+                removeButton.textContent = '';
                 removeButton.className = 'remove-button';
+                removeButton.appendChild(removeIcon);
                 removeButton.addEventListener('click', () => {
                     // Find the index of the item with the matching tableId and itemId
                     const itemIndex = cart.findIndex(item => item.tableId === tableId && item.itemId === item.itemId);
