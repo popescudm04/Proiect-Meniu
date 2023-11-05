@@ -154,7 +154,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 const minusBtn = document.createElement('button');
                 const minusIcon = document.createElement('span');
                 minusBtn.textContent = '';
-                minusBtn.className = 'quantity-btn minus-btn';
+                minusBtn.className = 'quantity-btn-minus-btn';
                 minusIcon.className = 'material-symbols-outlined';
                 minusIcon.textContent = 'remove'
                 minusBtn.appendChild(minusIcon);
@@ -167,7 +167,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 const plusBtn = document.createElement('button');
                 const plusIcon = document.createElement('span');
                 plusBtn.textContent = '';
-                plusBtn.className = 'quantity-btn plus-btn';
+                plusBtn.className = 'quantity-btn-plus-btn';
                 plusIcon.className = 'material-symbols-outlined';
                 plusIcon.textContent = 'add';
                 plusBtn.appendChild(plusIcon);

@@ -252,7 +252,11 @@ section{
     margin: 0 5px; /* Margin between buttons */
     transition: background-color 0.3s ease; /* Smooth background color transition */
 }
-
+.quantity-btn-plus-btn:hover, .quantity-btn-minus-btn:hover{
+    background-color:grey;
+    opacity: 0.3;
+    border-radius:10px;
+}
 /* Styles for Quantity Display */
 .quantity-display {
     font-size: 14px; /* Font size for the quantity display */
